@@ -2,6 +2,8 @@ package dao;
 
 import controler.SchemeDB;
 import database.DBConnection;
+import model.Empleado;
+import model.Pedido;
 import model.Producto;
 
 import java.sql.Connection;
@@ -28,7 +30,7 @@ public class ProductoDAOImp implements ProductoDAO{
             preparedStatement.setString(2,producto.getDescripcion());
             preparedStatement.setInt(3,producto.getCantidad());
             preparedStatement.setDouble(4,producto.getPrecio());
-            preparedStatement.execute();
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println("ERROR: Ha ocurrido un error al insertar un producto");
@@ -90,7 +92,7 @@ public class ProductoDAOImp implements ProductoDAO{
     }
 
     @Override
-    public List<Producto> getAllProductosPrecioMayor600() {
+    public List<Producto> getAllProductosPrecioMenor40() {
         List<Producto> productos= new ArrayList<Producto>();
         //Se coloca 40 por que el maximo de precio que devuelve la pagina es 99
         String query = String.format("SELECT * FROM %s WHERE %s < 40",SchemeDB.TAB_NAME_P,SchemeDB.COL_PRICE);
@@ -124,11 +126,15 @@ public class ProductoDAOImp implements ProductoDAO{
                 SchemeDB.COL_ID,SchemeDB.TAB_NAME_P,SchemeDB.COL_PRICE);
         try {
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.execute(query);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: Ha ocurrido un error al insertar productos favoritos");
             System.out.println(e.getMessage());
         }
     }
+
+
+
+
 }
 

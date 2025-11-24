@@ -1,16 +1,22 @@
 package controler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dao.EmpleadoDAOImp;
+import dao.PedidoDAO;
+import dao.PedidoDAOImp;
 import dao.ProductoDAOImp;
-import model.Producto;
-import model.ProductoJSON;
-import model.ProductoResponse;
+import model.*;
+
 import java.net.URI;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlmacenController {
     ProductoDAOImp productoDAOImp = new ProductoDAOImp();
+    EmpleadoDAOImp empleadoDAOImp = new EmpleadoDAOImp();
+    PedidoDAOImp pedidoDAOImp = new PedidoDAOImp();
+
     String uri = "https://dummyjson.com/products";
     ObjectMapper objectMapper = new ObjectMapper();
 
@@ -49,13 +55,37 @@ public class AlmacenController {
         }
     }
 
-    public void getAllProductosPrecioMayor600() {
-        for (Producto producto: productoDAOImp.getAllProductosPrecioMayor600()){
+    public void getAllProductosPrecioMenor40() {
+        for (Producto producto: productoDAOImp.getAllProductosPrecioMenor40()){
             System.out.println(producto.toString());
         }
     }
 
     public void cargarProductosFavoritos() {
         productoDAOImp.cargarProductosFavoritos();
+    }
+
+    public void cargarEmpleados(List<Empleado> listaEmpleados) {
+
+        for (Empleado empleado : listaEmpleados) {
+            empleadoDAOImp.insertarEmpleado(empleado);
+        }
+
+    }
+
+    public void cargarEmpleados(Empleado empleado) {
+        empleadoDAOImp.insertarEmpleado(empleado);
+    }
+
+    public void cargarPedidos(List<Pedido> listaPedidos) {
+
+        for (Pedido pedido : listaPedidos) {
+            pedidoDAOImp.insertarPedido(pedido);
+        }
+
+    }
+
+    public void cargarPedidos(Pedido pedido) {
+        pedidoDAOImp.insertarPedido(pedido);
     }
 }

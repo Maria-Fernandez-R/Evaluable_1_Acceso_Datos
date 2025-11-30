@@ -31,7 +31,7 @@ CREATE TABLE `empleados` (
   `direccion` varchar(100) DEFAULT NULL,
   `telefono` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `pedidos` (
   PRIMARY KEY (`id`),
   KEY `pedidos_productos_FK` (`id_producto`),
   CONSTRAINT `pedidos_productos_FK` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ CREATE TABLE `productos_fav` (
   PRIMARY KEY (`id`),
   KEY `productos_fav_productos_FK` (`id_producto`),
   CONSTRAINT `productos_fav_productos_FK` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=677 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

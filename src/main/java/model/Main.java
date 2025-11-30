@@ -75,15 +75,15 @@ public class Main {
         almacenController.cargarProductosFavoritos();
 
         //OBTENER TODOS LOS PRODUCTOS
-        System.out.println("OBTENER TODOS LOS PRODUCTOS");
+        System.out.println("\n-----------------OBTENER TODOS LOS PRODUCTOS--------------");
         almacenController.getAllProductos();
 
         //OBTENER TODOS LOS PRODUCTOS FAVORITOS
-        System.out.println("OBTENER TODOS LOS PRODUCTOS FAVORITOS");
+        System.out.println("\n-----------------OBTENER TODOS LOS PRODUCTOS FAVORITOS-----------");
         almacenController.getAllProductosFavoritos();
 
         //OBTENER TODOS LOS PRODUCTOS CON PRECIO INFERIOR A 40€
-        System.out.println("OBTENER TODOS LOS PRODUCTOS QUE TIENEN UN PRECIO INFERIOR A 40 €");
+        System.out.println("\n----------------OBTENER TODOS LOS PRODUCTOS QUE TIENEN UN PRECIO INFERIOR A 40 €----------------");
         almacenController.getAllProductosPrecioMenor40();
 
 
